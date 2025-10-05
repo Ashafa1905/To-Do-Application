@@ -1,0 +1,20 @@
+[2025-10-05T20:33:46.621Z] Server running on port 3000
+[2025-10-05T20:33:49.208Z] MongoDB Connected: ac-7sitd6s-shard-00-01.vryzb66.mongodb.net
+[2025-10-05T20:36:19.912Z] Server running on port 3000
+[2025-10-05T20:36:22.988Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
+[2025-10-05T20:37:02.771Z] Server running on port 3000
+[2025-10-05T20:37:04.807Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
+[2025-10-05T20:39:11.965Z] Server running on port 3000
+[2025-10-05T20:39:14.352Z] MongoDB Connected: ac-7sitd6s-shard-00-01.vryzb66.mongodb.net
+[2025-10-05T20:39:45.121Z] Server running on port 3000
+[2025-10-05T20:39:47.542Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
+[2025-10-05T20:40:09.086Z] Server running on port 4000
+[2025-10-05T20:40:11.108Z] MongoDB Connected: ac-7sitd6s-shard-00-01.vryzb66.mongodb.net
+[2025-10-05T20:40:45.895Z] Server running on port 4000
+[2025-10-05T20:40:47.836Z] MongoDB Connected: ac-7sitd6s-shard-00-00.vryzb66.mongodb.net
+[2025-10-05T20:47:44.098Z] Server running on port 4000: http://localhost:4000
+[2025-10-05T20:47:46.841Z] MongoDB Connected: ac-7sitd6s-shard-00-01.vryzb66.mongodb.net
+[2025-10-05T20:49:20.020Z] Server running on port 4000: http://localhost:4000
+[2025-10-05T20:49:22.070Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
+[2025-10-05T20:49:43.907Z] Server running on port 4000: http://localhost:4000
+[2025-10-05T20:49:45.948Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
