@@ -18,3 +18,18 @@
 [2025-10-05T20:49:22.070Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
 [2025-10-05T20:49:43.907Z] Server running on port 4000: http://localhost:4000
 [2025-10-05T20:49:45.948Z] MongoDB Connected: ac-7sitd6s-shard-00-02.vryzb66.mongodb.net
+[2025-10-06T09:43:17.138Z] Server running on port 4000: http://localhost:4000
+[2025-10-06T09:43:19.270Z] MongoDB Connected: ac-7sitd6s-shard-00-01.vryzb66.mongodb.net
+[2025-10-06T09:44:27.771Z] New user registered: ashafabasheer@gmail.com
+[2025-10-06T09:44:36.847Z] User logged in: ashafabasheer@gmail.com
+[2025-10-06T09:45:04.734Z] Task created: Basheer  by user ashafabasheer@gmail.com
+[2025-10-06T09:45:09.965Z] Task updated: Basheer  -> completed
+[2025-10-06T09:45:29.713Z] Task created: will by user ashafabasheer@gmail.com
+[2025-10-06T09:45:36.266Z] Task updated: will -> completed
+[2025-10-06T09:47:27.150Z] New user registered: basheerashafa@gm.com
+[2025-10-06T09:47:34.993Z] User logged in: basheerashafa@gm.com
+[2025-10-06T09:48:26.177Z] Task created: Basheer by user basheerashafa@gm.com
+[2025-10-06T09:48:32.416Z] Task updated: Basheer -> deleted
+[2025-10-06T09:48:47.936Z] Task created: Basseeer by user basheerashafa@gm.com
+[2025-10-06T09:48:49.897Z] Task updated: Basseeer -> completed
+[2025-10-06T09:49:30.411Z] User logged in: ashafabasheer@gmail.com

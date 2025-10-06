@@ -1,18 +1,86 @@
 <h1>My Tasks</h1>
-<form action="/tasks/create" method="POST">
+
+<!-- Form to add new task -->
+<form id="taskForm">
   <input type="text" name="title" placeholder="Add Task" required>
+  <input type="text" name="description" placeholder="Description (optional)">
   <button type="submit">Add</button>
 </form>
 
 <h2>Pending</h2>
-<ul>
+<ul id="pendingTasks">
   <% tasks.filter(t => t.status==='pending').forEach(task => { %>
-    <li>
-      <%= task.title %>
-      <form action="/tasks/update/<%= task._id %>" method="POST">
-        <button name="status" value="completed">Complete</button>
-        <button name="status" value="deleted">Delete</button>
-      </form>
+    <li data-id="<%= task._id %>">
+      <strong><%= task.title %></strong>
+      <% if (task.description) { %> - <em><%= task.description %></em><% } %>
+      <button class="completeBtn">Complete</button>
+      <button class="deleteBtn">Delete</button>
     </li>
   <% }) %>
 </ul>
+
+<h2>Completed</h2>
+<ul id="completedTasks">
+  <% tasks.filter(t => t.status==='completed').forEach(task => { %>
+    <li data-id="<%= task._id %>">
+      <strong><%= task.title %></strong>
+      <% if (task.description) { %> - <em><%= task.description %></em><% } %>
+    </li>
+  <% }) %>
+</ul>
+
+<script>
+  const taskForm = document.getElementById('taskForm');
+  const pendingTasks = document.getElementById('pendingTasks');
+  const completedTasks = document.getElementById('completedTasks');
+
+  // Add a new task
+  taskForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(taskForm);
+    const data = {
+      title: formData.get('title'),
+      description: formData.get('description')
+    };
+
+    const res = await fetch('/tasks/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const task = await res.json();
+    addTaskToDOM(task);
+    taskForm.reset();
+  });
+
+  // Add task element to DOM
+  function addTaskToDOM(task) {
+    const li = document.createElement('li');
+    li.dataset.id = task._id;
+    li.innerHTML = `<strong>${task.title}</strong> ${task.description ? '- <em>'+task.description+'</em>' : ''}
+      <button class="completeBtn">Complete</button>
+      <button class="deleteBtn">Delete</button>`;
+    pendingTasks.appendChild(li);
+  }
+
+  // Handle Complete/Delete buttons
+  document.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('completeBtn') || e.target.classList.contains('deleteBtn')) {
+      const li = e.target.closest('li');
+      const status = e.target.classList.contains('completeBtn') ? 'completed' : 'deleted';
+      const res = await fetch('/tasks/update/' + li.dataset.id, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status })
+      });
+      const updatedTask = await res.json();
+      li.remove(); // remove from current list
+      if (updatedTask.status === 'completed') {
+        const newLi = document.createElement('li');
+        newLi.innerHTML = `<strong>${updatedTask.title}</strong> ${updatedTask.description ? '- <em>'+updatedTask.description+'</em>' : ''}`;
+        completedTasks.appendChild(newLi);
+      }
+    }
+  });
+</script>
